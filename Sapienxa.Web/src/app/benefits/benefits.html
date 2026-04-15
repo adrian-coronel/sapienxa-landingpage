@@ -1,0 +1,55 @@
+<section class="benefits" aria-labelledby="benefits-title">
+  <div class="container">
+    <div class="benefits__header reveal">
+      <p class="section-tag">Nuestra propuesta de valor</p>
+      <h2 id="benefits-title" class="section-title">¿Por qué elegir Sapienxa?</h2>
+      <p class="section-subtitle">
+        Combinamos tecnología de primer nivel con conocimiento profundo del mercado latinoamericano
+        para entregarte resultados reales en tiempo récord.
+      </p>
+    </div>
+
+    <div class="benefits__grid">
+      @for (benefit of benefits; track benefit.title; let i = $index) {
+        <article class="benefit-card reveal" [class.d1]="i===0" [class.d2]="i===1" [class.d3]="i===2" itemscope>
+          <div class="benefit-card__icon" aria-hidden="true">
+            @if (i === 0) {
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <rect x="3" y="8" width="10" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <rect x="15" y="4" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M8 8V6a2 2 0 014 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="8" cy="14" r="1.5" fill="currentColor"/>
+                <circle cx="20" cy="12" r="1.5" fill="currentColor"/>
+              </svg>
+            }
+            @if (i === 1) {
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="14" cy="14" r="4" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M14 4v4M14 20v4M4 14h4M20 14h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M7.05 7.05l2.83 2.83M18.12 18.12l2.83 2.83M7.05 20.95l2.83-2.83M18.12 9.88l2.83-2.83" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            }
+            @if (i === 2) {
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M4 20l6-8 5 4 4-6 5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="12" r="2" fill="currentColor"/>
+                <circle cx="15" cy="16" r="2" fill="currentColor"/>
+                <circle cx="19" cy="10" r="2" fill="currentColor"/>
+                <circle cx="24" cy="20" r="2" fill="currentColor"/>
+              </svg>
+            }
+          </div>
+          <h3 class="benefit-card__title">{{ benefit.title }}</h3>
+          <p class="benefit-card__desc">{{ benefit.description }}</p>
+          <a [href]="benefit.link" class="benefit-card__link">
+            Saber más
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </article>
+      }
+    </div>
+  </div>
+</section>

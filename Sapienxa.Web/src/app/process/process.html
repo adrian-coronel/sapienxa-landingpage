@@ -1,0 +1,37 @@
+<section class="process" aria-labelledby="process-title" itemscope itemtype="https://schema.org/HowTo">
+  <div class="container">
+    <div class="process__header reveal">
+      <p class="section-tag">Cómo funciona</p>
+      <h2 id="process-title" class="section-title" itemprop="name">Del diagnóstico a resultados en 4 pasos</h2>
+      <p class="section-subtitle" itemprop="description">
+        Un proceso diseñado para minimizar la fricción y maximizar el impacto desde el primer día.
+      </p>
+    </div>
+
+    <div class="steps">
+      @for (step of steps; track step.number; let i = $index, last = $last) {
+        <div class="step reveal" [class.d1]="i===0" [class.d2]="i===1" [class.d3]="i===2" [class.d4]="i===3" itemscope itemprop="step" itemtype="https://schema.org/HowToStep">
+          <div class="step__number-col">
+            <div class="step__badge" aria-hidden="true">{{ step.number }}</div>
+            @if (!last) {
+              <div class="step__line" aria-hidden="true"></div>
+            }
+          </div>
+          <div class="step__content">
+            <h3 class="step__title" itemprop="name">{{ step.title }}</h3>
+            <p class="step__desc" itemprop="text">{{ step.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="process__cta reveal">
+      <a href="#contacto" class="btn-primary">
+        Agendar mi diagnóstico gratuito
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

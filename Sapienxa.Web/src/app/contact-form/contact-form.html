@@ -1,0 +1,201 @@
+<section class="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact__layout">
+      <div class="contact__left reveal">
+        <p class="section-tag">Empieza hoy</p>
+        <h2 id="contact-title" class="section-title" style="color: white;">
+          Tu diagnóstico gratuito, sin compromisos.
+        </h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.65); margin-top: 1rem;">
+          Respondemos en menos de 24 horas. Cuéntanos tu reto y te mostramos cómo lo resolvemos.
+        </p>
+
+        <div class="contact__trust">
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M10 2L3 5v5c0 4.18 2.92 8.09 7 9 4.08-.91 7-4.82 7-9V5l-7-3z" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M7 10l2 2 4-4" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Sin compromiso de contratación</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="7.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+              <path d="M10 6v4l2.5 2.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Respuesta garantizada en 24h</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <rect x="2.5" y="5" width="15" height="12" rx="2" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+              <path d="M6.5 5V4a3.5 3.5 0 017 0v1" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+            </svg>
+            <span>Tus datos están seguros</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__right reveal d2">
+        @if (!isSuccess()) {
+          <form [formGroup]="form" (ngSubmit)="submit()" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre" class="form-label">Nombre *</label>
+                <input
+                  id="nombre"
+                  type="text"
+                  formControlName="nombre"
+                  class="form-input"
+                  [class.invalid]="isInvalid('nombre')"
+                  placeholder="Tu nombre completo"
+                  autocomplete="name"
+                />
+                @if (isInvalid('nombre')) {
+                  <span class="form-error" role="alert">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 4v3M6 8.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    {{ getError('nombre') }}
+                  </span>
+                }
+              </div>
+              <div class="form-group">
+                <label for="empresa" class="form-label">Empresa *</label>
+                <input
+                  id="empresa"
+                  type="text"
+                  formControlName="empresa"
+                  class="form-input"
+                  [class.invalid]="isInvalid('empresa')"
+                  placeholder="Nombre de tu empresa"
+                  autocomplete="organization"
+                />
+                @if (isInvalid('empresa')) {
+                  <span class="form-error" role="alert">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 4v3M6 8.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    {{ getError('empresa') }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email" class="form-label">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  class="form-input"
+                  [class.invalid]="isInvalid('email')"
+                  placeholder="tu&#64;empresa.com"
+                  autocomplete="email"
+                />
+                @if (isInvalid('email')) {
+                  <span class="form-error" role="alert">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 4v3M6 8.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    {{ getError('email') }}
+                  </span>
+                }
+              </div>
+              <div class="form-group">
+                <label for="telefono" class="form-label">Teléfono *</label>
+                <input
+                  id="telefono"
+                  type="tel"
+                  formControlName="telefono"
+                  class="form-input"
+                  [class.invalid]="isInvalid('telefono')"
+                  placeholder="+51 999 999 999"
+                  autocomplete="tel"
+                />
+                @if (isInvalid('telefono')) {
+                  <span class="form-error" role="alert">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 4v3M6 8.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    {{ getError('telefono') }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="pais" class="form-label">País *</label>
+              <select
+                id="pais"
+                formControlName="pais"
+                class="form-input form-select"
+                [class.invalid]="isInvalid('pais')"
+                autocomplete="country-name"
+              >
+                <option value="" disabled>Selecciona tu país</option>
+                @for (country of countries; track country) {
+                  <option [value]="country">{{ country }}</option>
+                }
+              </select>
+              @if (isInvalid('pais')) {
+                <span class="form-error" role="alert">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 4v3M6 8.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  {{ getError('pais') }}
+                </span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje" class="form-label">¿Qué proceso quieres automatizar? *</label>
+              <textarea
+                id="mensaje"
+                formControlName="mensaje"
+                class="form-input form-textarea"
+                [class.invalid]="isInvalid('mensaje')"
+                rows="4"
+                placeholder="Ej: Quiero automatizar el seguimiento de mis leads y reducir tiempo en reportes manuales."
+              ></textarea>
+              @if (isInvalid('mensaje')) {
+                <span class="form-error" role="alert">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 4v3M6 8.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                  {{ getError('mensaje') }}
+                </span>
+              }
+            </div>
+
+            @if (errorMessage()) {
+              <p class="form-error" role="alert" style="margin-bottom: 1rem;">
+                {{ errorMessage() }}
+              </p>
+            }
+
+            <button type="submit" class="form-submit" [disabled]="isSubmitting()">
+              @if (isSubmitting()) {
+                <span class="submit-spinner" aria-hidden="true"></span>
+                Enviando...
+              } @else {
+                Quiero mi Demo Gratuita
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              }
+            </button>
+
+            <p class="form-privacy">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M6 1L1.5 2.5v3.5c0 2.8 1.95 5.4 4.5 6 2.55-.6 4.5-3.2 4.5-6V2.5L6 1z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+              </svg>
+              Tu información es confidencial y no será compartida.
+            </p>
+          </form>
+        } @else {
+          <div class="success-state" role="alert" aria-live="polite">
+            <div class="success-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" fill="rgba(26,94,255,0.15)" stroke="#1A5EFF" stroke-width="2"/>
+                <path d="M12 20l6 6 10-12" stroke="#1A5EFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="success-title">¡Mensaje recibido!</h3>
+            <p class="success-msg">
+              Nuestro equipo revisará tu solicitud y te contactará en menos de 24 horas.
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

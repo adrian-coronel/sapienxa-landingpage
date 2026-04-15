@@ -1,0 +1,13 @@
+<section class="metrics" aria-label="Métricas de impacto">
+  <div class="container">
+    <div class="metrics__grid">
+      @for (metric of metrics; track metric.label; let i = $index) {
+        <div class="metric reveal" [class.d1]="i===0" [class.d2]="i===1" [class.d3]="i===2" [class.d4]="i===3">
+          <span class="metric__number">{{ displayed()[i] }}</span>
+          <span class="metric__label">{{ metric.label }}</span>
+          <span class="metric__desc">{{ metric.description }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,120 @@
+:host { display: block; }
+
+.technologies {
+  padding: 6rem 0 4rem;
+  background: white;
+}
+
+.technologies__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.technologies__header .section-subtitle {
+  margin: 1rem auto 0;
+}
+
+/* ── Desktop grid ─────────────────────────────── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .tech-grid { display: none; }
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.5rem 1rem 1.25rem;
+  border: 1.5px solid #e8edf5;
+  border-radius: 14px;
+  background: white;
+  cursor: default;
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: filter 0.25s ease, opacity 0.25s ease,
+              border-color 0.25s ease, transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.tech-item:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  border-color: var(--brand-color, var(--c-accent));
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Icono como CSS mask — color controlado por background-color */
+.tech-item__icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  /* background-color y mask-image vienen del [style] binding */
+}
+
+.tech-item__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-primary);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ── Mobile marquee ───────────────────────────── */
+.tech-marquee-wrapper {
+  overflow: hidden;
+  padding: 1.5rem 0;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .tech-marquee-wrapper { display: block; }
+}
+
+.tech-track {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.tech-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.tech-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  background: var(--c-gray-light);
+  border: 1.5px solid #e8edf5;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tech-badge__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.tech-badge__name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--c-primary);
+}

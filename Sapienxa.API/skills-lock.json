@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "skills": {
+    "OpenTelemetry-NET-Instrumentation": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "0ceaa9d0c53be5218018f6f0f09b3f4b91078ae19607c9ae4e85fdbbfcaa1852"
+    },
+    "akka-hosting-actor-patterns": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "82186da816f3d5384c7003fcd9d0f588e7237ddeda3fa376b9d84a6e8fc835a8"
+    },
+    "akka-net-best-practices": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "a746b1b0d12e95d762db9dca8a6a45545528dc65a05542984123e0d0cf2f5b5b"
+    },
+    "akka-net-management": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "8632abbf547bc4a534cab06d6b15a7a15a00253eae72044f4140c049b9d28f7d"
+    },
+    "akka-net-testing-patterns": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "ba443a2c352c6224276a5fa15af1214cd102942c15a775ba9a4aabb3f7b188e8"
+    },
+    "api-design": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "8348351479f0d533899aeb74f4e0d4bfa1ee8d618dfcb0292463b462bbdc1456"
+    },
+    "api-design-principles": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "b242f962d5f78bf8bc147e92f2aa0341459b9f5f2f955e9867a8c41b85f22648"
+    },
+    "aspire-integration-testing": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "024b6015e73175bb99b4b08bac7b1d8f2dd2e93416bc8e31f0cd17973a69b5c1"
+    },
+    "aspire-service-defaults": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "fec7db071c3715d61532ef06529b4b8129b03c41676a0ace62d95093a1d26166"
+    },
+    "clean-code-dotnet": {
+      "source": "thapaliyabikendra/ai-artifacts",
+      "sourceType": "github",
+      "computedHash": "c0c46aa7b21719992cf89c03d71875bed2262d2c8686fcabf69b0300de6eb78c"
+    },
+    "crap-analysis": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "0999d68191c41b664489c1ecaf5c27b2431efc8c78c763906b66b335547c7d02"
+    },
+    "csharp-concurrency-patterns": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "2ce0c63b105f13d60d5a4623da8316fe81a70eac1015e216d1d9978ac024e462"
+    },
+    "database-performance": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "2cd3ed508e961a790ec87e1fc0c1f40787c4b7ebeeb715eae683e641fdf88c1e"
+    },
+    "dependency-injection-patterns": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "2b94c9f3cefb33291d543661bf2d5224b35f385be9a07e21b772760a8e92c4d8"
+    },
+    "dotnet-backend-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "624af9f8faea713dadaa51fc2f2040a4b365b4e083b9b9f82d7e9df1f627ea79"
+    },
+    "dotnet-devcert-trust": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "9263982f528be4f8119ea2934b8f3be03a3c9f51401654f3d2dc7e63b5c05481"
+    },
+    "dotnet-local-tools": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "ee537fbb815503fcab239a14c5a1648d14431fab9dd4bb132adc6ad8a44348fe"
+    },
+    "dotnet-project-structure": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "e34ba5ceb56dfe32af4f1f4fa899ab6b2d63ec20d31bc90423067f2c5a7cafd5"
+    },
+    "dotnet-slopwatch": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "5e8140c55cbcd1c78e32f1eb491b48d56835894b94cea9755a7396a5d96a0642"
+    },
+    "efcore-patterns": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "b3eda88aa97e7255c2b33d8ad5100db863ad36e7e1fe980e57be00b4f6b3606f"
+    },
+    "ilspy-decompile": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "ada5a5515cb2419569b9e276ed9d98266f90420453c1a2d9175458e06b6d8739"
+    },
+    "mailpit-integration": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "ac768cfcf888effe130b51f3e807a8219092a5e85ed1c1d3566ce46d35e3ce6a"
+    },
+    "marketplace-publishing": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "72e41da2c396e207719a8abbd8da0a66e43b698ca6d7895a3743b6fd95c75441"
+    },
+    "microsoft-extensions-configuration": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "aee9844dc85242e8896187ef70007d46feea89be92c27ab71794fb39e29850d2"
+    },
+    "mjml-email-templates": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "c4c26a0adcba727262f5517d649a7f4a3e54b73a2982c80570955f52e0a8fc4e"
+    },
+    "package-management": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "441cdcd0bb1b116f99085d03fd3328d3bde22e02dc7164904be96cc795cdec3f"
+    },
+    "playwright-ci-caching": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "94030a307418b31fd1bc1909e549996beaf2f14c131b5b222b5c1ade15e068be"
+    },
+    "serialization": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "f3320199c4547c6cc9ce5803f89e1fb35305639216b42bb1faf91f54acebad9f"
+    },
+    "skills-index-snippets": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "4a6a4ddebea175319ec0c18ac25412731f2afe5443f7b7426d4d48c09b066024"
+    },
+    "snapshot-testing": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "840071b91ff55b1087e632645313c34bc1e622495389a1b65624eca3184c40b0"
+    },
+    "type-design-performance": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "d34f1427d0a8663c37a6c6dd23a65e0ac905e787bc9680ab6df807c8d59c2292"
+    },
+    "verify-email-snapshots": {
+      "source": "Aaronontheweb/dotnet-skills",
+      "sourceType": "github",
+      "computedHash": "dd988129ba1af1259a02ac22c42b01f880ce30e6f355cfddc54ecf3fd4cb8fef"
+    }
+  }
+}

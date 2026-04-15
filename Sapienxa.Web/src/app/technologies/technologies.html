@@ -1,0 +1,44 @@
+<section class="technologies" aria-labelledby="tech-title">
+  <div class="container">
+    <div class="technologies__header reveal">
+      <p class="section-tag">Stack tecnológico</p>
+      <h2 id="tech-title" class="section-title">Tecnología de primer nivel, resultados reales</h2>
+      <p class="section-subtitle">
+        Integramos con las herramientas que ya usas. Sin reemplazar tu stack, potenciándolo con IA.
+      </p>
+    </div>
+
+    <!-- Desktop grid -->
+    <div class="tech-grid reveal">
+      @for (tech of technologies; track tech.name) {
+        <div class="tech-item" [style.--brand-color]="tech.color" [attr.title]="tech.name">
+          <span
+            class="tech-item__icon"
+            [style]="maskStyle(tech.icon, tech.color)"
+            role="img"
+            [attr.aria-label]="tech.name + ' logo'"
+          ></span>
+          <span class="tech-item__name">{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Mobile marquee -->
+  <div class="tech-marquee-wrapper" aria-hidden="true">
+    <div class="tech-track">
+      @for (tech of technologies; track tech.name) {
+        <div class="tech-badge">
+          <span class="tech-badge__icon" [style]="maskStyle(tech.icon, tech.color)"></span>
+          <span class="tech-badge__name">{{ tech.name }}</span>
+        </div>
+      }
+      @for (tech of technologies; track tech.name + '_dup') {
+        <div class="tech-badge" aria-hidden="true">
+          <span class="tech-badge__icon" [style]="maskStyle(tech.icon, tech.color)"></span>
+          <span class="tech-badge__name">{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

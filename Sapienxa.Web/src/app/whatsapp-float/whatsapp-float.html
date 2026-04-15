@@ -1,0 +1,63 @@
+<div class="wa-float">
+  <!-- Popup menu -->
+  @if (isOpen()) {
+    <div
+      class="wa-popup"
+      role="dialog"
+      aria-label="Opciones de contacto"
+      aria-modal="true"
+    >
+      <div class="wa-popup__header">
+        <div class="wa-popup__avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.18c-.23.65-1.35 1.24-1.84 1.32-.47.08-1.07.11-1.72-.11-.4-.13-.9-.3-1.56-.59-2.74-1.19-4.53-3.95-4.66-4.13-.14-.18-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.28.23-.23.5-.29.67-.29h.48c.15 0 .36-.06.56.43l.72 1.76c.06.15.1.32.02.5l-.28.57-.42.66c-.14.22-.29.46-.12.71.17.26.76 1.13 1.63 1.83.89.7 1.64 1 1.94 1.11.3.11.47.09.64-.05.18-.15.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.16 1.37z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="wa-popup__greeting">Hola 👋 ¿Cómo podemos ayudarte hoy?</p>
+          <p class="wa-popup__sub">Elige una opción para conectar con nosotros</p>
+        </div>
+        <button class="wa-popup__close" (click)="close()" aria-label="Cerrar">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="wa-popup__options">
+        @for (opt of options; track opt.label) {
+          <a [href]="opt.href" class="wa-option" target="_blank" rel="noopener noreferrer" (click)="close()">
+            <span class="wa-option__icon">{{ opt.icon }}</span>
+            <div class="wa-option__text">
+              <span class="wa-option__label">{{ opt.label }}</span>
+              <span class="wa-option__sub">{{ opt.sub }}</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="wa-option__arrow" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- FAB Button -->
+  <button
+    class="wa-fab"
+    [class.pulsing]="!hasPulsed()"
+    [class.open]="isOpen()"
+    (click)="toggle()"
+    [attr.aria-expanded]="isOpen()"
+    aria-label="Abrir opciones de contacto por WhatsApp"
+  >
+    @if (!isOpen()) {
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.18c-.23.65-1.35 1.24-1.84 1.32-.47.08-1.07.11-1.72-.11-.4-.13-.9-.3-1.56-.59-2.74-1.19-4.53-3.95-4.66-4.13-.14-.18-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.28.23-.23.5-.29.67-.29h.48c.15 0 .36-.06.56.43l.72 1.76c.06.15.1.32.02.5l-.28.57-.42.66c-.14.22-.29.46-.12.71.17.26.76 1.13 1.63 1.83.89.7 1.64 1 1.94 1.11.3.11.47.09.64-.05.18-.15.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.16 1.37z"/>
+      </svg>
+    } @else {
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M4 4l14 14M18 4L4 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    }
+  </button>
+</div>

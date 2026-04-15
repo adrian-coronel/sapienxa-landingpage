@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx ng:*)",
+      "WebFetch(domain:cdn.simpleicons.org)"
+    ]
+  }
+}
