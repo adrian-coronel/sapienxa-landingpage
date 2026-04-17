@@ -23,7 +23,7 @@ services:
     build:
       context: ./Sapienxa.API
       dockerfile: DockerFile
-    container_name: dotnet-api
+    container_name: sapienxa-api
     restart: unless-stopped
     expose:
       - "8080"
@@ -46,7 +46,7 @@ services:
     build:
       context: ./Sapienxa.Web
       dockerfile: DockerFile
-    container_name: angular-app
+    container_name: sapienxa-web
     restart: unless-stopped
     expose:
       - "80"
