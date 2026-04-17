@@ -1,0 +1,10 @@
+bin
+obj
+.git
+.gitignore
+*.log
+.env
+.vs
+.vscode
+*.user
+.idea

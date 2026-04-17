@@ -1,0 +1,72 @@
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"        # expuesto al host para conectarte con DBeaver/pgAdmin
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sapienxa-network
+
+  # ── API .NET ────────────────────────────────────────────
+  api:
+    build:
+      context: ./Sapienxa.API
+      dockerfile: DockerFile
+    container_name: sapienxa-api
+    restart: unless-stopped
+    ports:
+      - "5000:8080"        # localhost:5000 → contenedor:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__Default=Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+    depends_on:
+      postgres:
+        condition: service_healthy   # espera que postgres esté listo
+    volumes:
+      # Hot reload en desarrollo — monta el código fuente
+      - ./Sapienxa.API:/src
+    develop:
+      watch:
+        - action: rebuild
+          path: ./Sapienxa.API
+          ignore:
+            - bin/
+            - obj/
+    networks:
+      - sapienxa-network
+
+  # ── Angular ─────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./Sapienxa.Web
+      dockerfile: DockerFile
+    container_name: sapienxa-web
+    restart: unless-stopped
+    ports:
+      - "4200:80"          # localhost:4200 → Nginx:80
+    depends_on:
+      - api
+    networks:
+      - sapienxa-network
+
+volumes:
+  postgres_data:
+
+networks:
+  sapienxa-network:
+    driver: bridge
